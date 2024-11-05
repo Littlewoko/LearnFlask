@@ -38,6 +38,11 @@ Courses = [
 def apiCourses():
     return jsonify(Courses)
 
+
+@app.route("/courses")
+def courses():
+    return render_template("courses.html", courses=Courses)
+
 if __name__ == '__main__':
     app.run()  # If address is in use, may need to terminate other sessions:
                # Runtime > Manage Sessions > Terminate Other Sessions

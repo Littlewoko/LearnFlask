@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% for course in courses %}
+
+    <h3>{{course.title}}</h3>
+    <img src="{{course.image}}" width="200em" alt="{{course.title}}"/>
+    <br />
+    <p>ID: {{course.id}}</p>
+{% endfor %}
