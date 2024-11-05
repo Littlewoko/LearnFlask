@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+{% for lore in lores %}
+
+    <h3>{{lore.title}}</h3>
+    <img src="{{lore.image}}" width="200em" alt="{{lore.title}}"/>
+    <br />
+    <p>ID: {{lore.id}}</p>
+{% endfor %}
