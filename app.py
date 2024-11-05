@@ -36,7 +36,7 @@ Courses = [
 
 @app.route('/api/courses')
 def apiCourses():
-    return jsonify(Courses);
+    return jsonify(Courses)
 
 if __name__ == '__main__':
     app.run()  # If address is in use, may need to terminate other sessions:
