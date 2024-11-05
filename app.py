@@ -2,7 +2,7 @@
 from flask import Flask, render_template
 from flask_ngrok import run_with_ngrok
 
-app = Flask(__name__)
+app = Flask(__name__) #templates is default
 run_with_ngrok(app)  # Start ngrok when app is run
 
 @app.route("/")
@@ -24,6 +24,10 @@ def productPrice(name, price):
 @app.route("/template")
 def template():
     return render_template('template.html')
+
+@app.route('/profile/<username>')
+def profile(username):
+    return render_template('profile.html', name=username)
 
 if __name__ == '__main__':
     app.run()  # If address is in use, may need to terminate other sessions:
