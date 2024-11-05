@@ -1,5 +1,5 @@
 # flask_ngrok_example.py
-from flask import Flask
+from flask import Flask, render_template
 from flask_ngrok import run_with_ngrok
 
 app = Flask(__name__)
@@ -20,6 +20,11 @@ def product(name):
 @app.route("/product/<name>/<price>")
 def productPrice(name, price):
     return "<h3>Product</h3> <p>" + name + " costs: " + price + "</p>"
+
+@app.route("/template")
+def template():
+    return render_template('template.html')
+
 if __name__ == '__main__':
     app.run()  # If address is in use, may need to terminate other sessions:
                # Runtime > Manage Sessions > Terminate Other Sessions
